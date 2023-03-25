@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+:root {
+  --fw-400: 400;
+  --fw-700: 700;
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --trasition: opacity 0.3s ease-in-out, color 0.3s ease-in-out,
+     background-color 0.3s ease-in-out;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: var(--fw-400);
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+}
+
+a,
+button {
+  display: inline-block;
+  text-decoration: none;
+  -webkit-transition: var(--trasition);
+  transition: var(--trasition);
+  border: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  padding-inline: 15px;
+}
+
+.card {
+  position: relative;
+  border-radius: 50px;
+  background-color: var(--dark-blue);
+  max-width: 380px;
+  padding: 40px 35px;
+  color: var(--light-grey);
+  overflow: hidden;
+}
+.card-icon {
+  --size: 40px;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+.card-title {
+  font-size: 24px;
+  color: var(--white);
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.rating-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-inline: -8px;
+  margin-bottom: 30px;
+}
+.rating-list li {
+  padding-inline: 8px;
+}
+.rating-list a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: inherit;
+  --size: 50px;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  line-height: 1;
+}
+.rating-list a:hover {
+  color: var(--white);
+  background-color: var(--orange);
+}
+.rating-list a.active {
+  background-color: var(--medium-grey);
+  color: var(--white);
+}
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white);
+  background-color: var(--orange);
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: var(--fw-700);
+  width: 100%;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 15px;
+}
+.btn:hover {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.card-response {
+  text-align: center;
+  display: none;
+}
+.card-response .card-img {
+  max-width: 150px;
+  margin-inline: auto;
+  margin-bottom: 30px;
+}
+.card-response p {
+  margin-bottom: 0;
+}
+
+.rated {
+  font-size: 13px;
+  color: var(--orange);
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+  padding: 8px 12px;
+  line-height: 1;
+  border-radius: 60px;
+  margin-bottom: 30px;
+}
+
+input[type=radio] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  --size: 50px;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  -webkit-transition: var(--trasition);
+  transition: var(--trasition);
+  margin-bottom: 0;
+}
+input[type=radio]:checked {
+  background-color: var(--medium-grey);
+}
+input[type=radio]:checked + span {
+  color: var(--white);
+}
+
+label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+label span {
+  position: absolute;
+  line-height: 1;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  -webkit-transition: var(--trasition);
+  transition: var(--trasition);
+}
+
+.preloader {
+  --size: 100%;
+  height: var(--size);
+  background-color: transparent;
+  width: var(--size);
+  display: none;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  border-radius: 50px;
+  left: 0;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.preloader::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 60px;
+  width: 60px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  border-left-color: rgba(255, 255, 255, 0.4);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: rotate 1s linear forwards infinite;
+          animation: rotate 1s linear forwards infinite;
+  background-color: transparent;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
