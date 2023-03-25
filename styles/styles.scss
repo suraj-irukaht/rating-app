@@ -61,6 +61,17 @@ p {
    padding-inline: 15px;
 }
 
+.attribution {
+   a {
+      color: var(--white);
+
+      &:hover {
+         color: var(--orange);
+      }
+   }
+   padding: 40px 0;
+}
+
 .card {
    position: relative;
    border-radius: 50px;
@@ -69,6 +80,8 @@ p {
    padding: 40px 35px;
    color: var(--light-grey);
    overflow: hidden;
+   margin-bottom: auto;
+   margin-top: auto;
 
    &-icon {
       --size: 40px;
@@ -88,6 +101,27 @@ p {
       margin-top: 0;
       margin-bottom: 10px;
       line-height: 1;
+   }
+
+   .error-msg {
+      color: rgb(188, 89, 89);
+      font-size: 14px;
+      padding-block: 10px;
+      display: none;
+   }
+
+   &.error {
+      .error-msg {
+         display: block;
+      }
+   }
+   &.active {
+      .card-response {
+         display: block;
+      }
+      .default-card {
+         display: none;
+      }
    }
 }
 
@@ -204,44 +238,5 @@ label {
       z-index: 10;
       pointer-events: none;
       transition: var(--trasition);
-   }
-}
-
-.preloader {
-   --size: 100%;
-   height: var(--size);
-   background-color: transparent;
-   width: var(--size);
-   display: none;
-   z-index: 999;
-   position: absolute;
-   top: 0;
-   border-radius: 50px;
-   left: 0;
-   backdrop-filter: blur(5px);
-
-   &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      height: 60px;
-      width: 60px;
-      border: 2px solid rgb(255, 255, 255);
-      border-radius: 50%;
-      border-left-color: rgba(255, 255, 255, 0.4);
-      transform: translate(-50%, -50%);
-      animation: rotate 1s linear forwards infinite;
-      background-color: transparent;
-   }
-}
-
-@keyframes rotate {
-   0% {
-      transform: translate(-50%, -50%) rotate(0deg);
-   }
-
-   100% {
-      transform: translate(-50%, -50%) rotate(360deg);
    }
 }
